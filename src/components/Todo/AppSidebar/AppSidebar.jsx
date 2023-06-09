@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, Segment, Sidebar } from "semantic-ui-react";
-
+import { NavLink } from "react-router-dom";
 import "./AppSidebar.css";
 
 function AppSidebar({ visible }) {
@@ -52,6 +52,8 @@ function AppSidebar({ visible }) {
             <Menu.Menu>
               {team.members.map((member) => (
                 <Menu.Item
+                  as={NavLink}
+                  to={"/todo/" + member.name}
                   key={member.name}
                   name={member.name}
                   active={activeItem === member.name}

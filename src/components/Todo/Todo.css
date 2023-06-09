@@ -1,0 +1,26 @@
+#todo-container{
+    min-height: 100vh;
+}
+
+#team-nav-btn-container-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+#team-nav-btn-container{
+    display: flex;
+    align-self: center;
+}
+
+#name-list::before{
+    content: "";
+    position: absolute;
+    left: -5px;
+    height: 100%;
+    width: 3px;
+    background: #41648a;
+}
+
+#cr-label{
+    margin-top: 5px;
+}

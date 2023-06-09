@@ -1,7 +1,9 @@
 #user-sidebar{
     height: 100vh;
+    max-width: 14rem;
 }
 
 #sidenav-menu{
     padding: 0px;
+    width: auto;
 }
