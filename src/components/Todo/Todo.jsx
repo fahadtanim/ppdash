@@ -24,8 +24,12 @@ import "./Todo.css";
 export default function Todo() {
   const { name } = useParams();
   const [visible, setVisible] = useState(false);
+  const [teamNameButton, setTeamNameButton] = useState("angle right");
   const handleSideNav = () => {
     setVisible(visible ? false : true);
+    setTeamNameButton(
+      teamNameButton === "angle right" ? "angle left" : "angle right"
+    );
   };
 
   return (
@@ -46,13 +50,14 @@ export default function Todo() {
                   id="team-nav-btn-container"
                 >
                   <Button
-                    color="vk"
+                    color="blue"
                     size="mini"
                     onClick={handleSideNav}
                     icon
                     labelPosition="right"
+                    id="team-name-btn"
                   >
-                    Teams & Members <Icon name="right arrow" />
+                    Teams & Members <Icon name={teamNameButton} />
                   </Button>
                 </GridColumn>
                 <GridColumn></GridColumn>

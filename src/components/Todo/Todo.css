@@ -24,3 +24,22 @@
 #cr-label{
     margin-top: 5px;
 }
+
+#team-name-btn{
+    background-color: #034577;
+}
+#team-name-btn:hover{
+    background-color: #001b2f;
+}
+
+#team-name-btn:hover > .icon {
+    color: #001b2f;
+    border: 1px solid #001b2f;
+    background-color: #fff;
+    transition: 0.75s;
+
+}
+#team-name-btn > .icon {
+    border: 1px solid #034577;
+
+}

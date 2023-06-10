@@ -1,0 +1,28 @@
+.ui[class*="right ribbon"].label {
+    left: calc(100% - 1rem);}
+#ticket-icon{
+    transform: rotateZ(-30deg);
+}
+
+.task-dates-steps{
+    border-right: 0px !important;
+    border-left: 0px !important;
+}
+
+.task-dates-steps .step{
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    font-size: 0.625rem !important;
+}
+.step .description .ui.label{
+    font-size: 0.625rem;
+}
+
+.ui.vertical.tabular.menu > .item > .ui.label{
+    float: none;
+    margin-left: 0px ;
+} 
+
+.comments-tab .ui.label{
+    margin-left: 0.75rem !important;
+}
