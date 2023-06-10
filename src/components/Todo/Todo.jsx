@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Button,
+  Container,
   Divider,
   Grid,
   GridColumn,
@@ -32,7 +33,7 @@ export default function Todo() {
       <Sidebar.Pushable as={Segment} id="todo-container">
         <AppSidebar visible={visible}></AppSidebar>
         <Sidebar.Pusher>
-          <Segment basic>
+          <Container>
             <Grid>
               <GridRow
                 columns={12}
@@ -55,38 +56,42 @@ export default function Todo() {
                   </Button>
                 </GridColumn>
                 <GridColumn></GridColumn>
-                <GridColumn floated="left" width={8}>
-                  <List horizontal id="name-list">
-                    <ListItem>
-                      <Image
-                        avatar
-                        src="https://react.semantic-ui.com/images/avatar/small/tom.jpg"
-                      />
-                      <ListContent>
-                        <ListHeader>{name}</ListHeader>
-                        <Label id="cr-label" color="blue" size="mini">
-                          CR
-                          <Label.Detail>12</Label.Detail>
-                        </Label>
-                        <Label color="violet" size="mini">
-                          IM
-                          <Label.Detail>3</Label.Detail>
-                        </Label>
-                        <Label color="red" size="mini">
-                          Total
-                          <Label.Detail>15</Label.Detail>
-                        </Label>
-                      </ListContent>
-                    </ListItem>
-                  </List>
-                </GridColumn>
-                <GridColumn></GridColumn>
+                {name && (
+                  <>
+                    <GridColumn floated="left" width={8}>
+                      <List horizontal id="name-list">
+                        <ListItem>
+                          <Image
+                            avatar
+                            src="https://react.semantic-ui.com/images/avatar/small/tom.jpg"
+                          />
+                          <ListContent>
+                            <ListHeader>{name}</ListHeader>
+                            <Label id="cr-label" color="blue" size="mini">
+                              CR
+                              <Label.Detail>12</Label.Detail>
+                            </Label>
+                            <Label color="violet" size="mini">
+                              IM
+                              <Label.Detail>3</Label.Detail>
+                            </Label>
+                            <Label color="red" size="mini">
+                              Total
+                              <Label.Detail>15</Label.Detail>
+                            </Label>
+                          </ListContent>
+                        </ListItem>
+                      </List>
+                    </GridColumn>
+                    <GridColumn></GridColumn>
+                  </>
+                )}
               </GridRow>
               <GridRow>
                 <Outlet></Outlet>
               </GridRow>
             </Grid>
-          </Segment>
+          </Container>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </>

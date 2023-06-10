@@ -1,41 +1,29 @@
-import { useParams } from "react-router-dom";
 import {
   Button,
-  Container,
-  Divider,
-  Grid,
-  GridRow,
   Icon,
   Item,
   ItemContent,
-  ItemDescription,
-  ItemExtra,
-  ItemGroup,
-  ItemHeader,
-  ItemImage,
   ItemMeta,
   Label,
   Menu,
   Segment,
   Tab,
 } from "semantic-ui-react";
-import Task from "../Task";
-export default function IndivTodo() {
-  const { name } = useParams();
 
-  const panes2 = [
+export default function Task() {
+  const panes = [
     {
       menuItem: (
-        <Menu.Item key="task">
+        <Menu.Item as={Button} key="task">
           <Icon name="tasks"></Icon>
-          <a>IS-2324</a>&nbsp; FNBK Escrow Analysis
+          <a href="#">IS-2777</a>&nbsp; Sana Overdraft Notice
         </Menu.Item>
       ),
       render: () => <Tab.Pane>info Content</Tab.Pane>,
     },
     {
       menuItem: (
-        <Menu.Item key="description">
+        <Menu.Item as={Button} key="description">
           <Icon name="file alternate"></Icon>
           Description
         </Menu.Item>
@@ -44,7 +32,7 @@ export default function IndivTodo() {
     },
     {
       menuItem: (
-        <Menu.Item key="comments">
+        <Menu.Item as={Button} key="comments">
           <Icon name="comments"></Icon>
           Comments<Label>15</Label>
         </Menu.Item>
@@ -53,7 +41,7 @@ export default function IndivTodo() {
     },
     {
       menuItem: (
-        <Menu.Item key="jira">
+        <Menu.Item as={Button} key="jira">
           <Icon name="autoprefixer"></Icon>
           &nbsp;&nbsp;Jira
         </Menu.Item>
@@ -61,17 +49,15 @@ export default function IndivTodo() {
       render: () => <Tab.Pane>Comments Content</Tab.Pane>,
     },
   ];
-
   return (
     <>
-      <Container>
-        <Divider horizontal>Tasks Assigned to {name}</Divider>
-        <ItemGroup divided>
-          <Task></Task>
-          <Task></Task>
-          <Task></Task>
-        </ItemGroup>
-      </Container>
+      <Item>
+        <ItemContent>
+          <ItemMeta>
+            <Tab panes={panes} />
+          </ItemMeta>
+        </ItemContent>
+      </Item>
     </>
   );
 }
