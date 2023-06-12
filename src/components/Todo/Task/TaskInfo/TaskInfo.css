@@ -1,8 +1,12 @@
 .jira-ticket{
     font-size: 10px;
     font-weight: bold;
+    z-index: 0;
+    cursor: pointer;
 }
-
+/* .task-initial-info{
+    padding-bottom: 0px!important;
+} */
 .ticket-qa{
     font-size: 10px;
     font-weight: bold;
@@ -16,4 +20,14 @@
 .bug-tracker-info{
     font-size: 0.8rem;
     font-weight: 700;
+}
+
+.submenu-item{
+    position: relative;
+    height: 10.5px;
+    left: 7px;
+}
+
+.task-initial-info{
+    cursor:pointer;
 }

@@ -1,0 +1,16 @@
+/* .jira-ticket-context-menu .ui.dropdown .menu>.item{
+    font-size: 0.6rem !important;
+} */
+
+.jira-ticket-context-menu.ui.dropdown .menu>.item{
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 500;
+}
+
+.jira-ticket-context-menu.ui.dropdown .menu>.item:hover{
+    font-weight: 900;
+    color: #222;
+    background-color: rgba(0,0,0,0.1);
+}
