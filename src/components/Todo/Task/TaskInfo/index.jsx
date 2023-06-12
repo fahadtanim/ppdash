@@ -11,6 +11,7 @@ import {
   TabPane,
 } from "semantic-ui-react";
 import "./TaskInfo.css";
+import { useEffect, useState } from "react";
 // import { TaskDates } from "..";
 const JiraTicket = ({ ticket }) => {
   const ticketURL = "#" + ticket;
@@ -73,7 +74,7 @@ export const TaskDates = () => {
         <Step>
           <Step.Content>
             <Step.Title>
-              <Icon name="handshake"></Icon>&nbsp;Parallel Date
+              <Icon name="print"></Icon>&nbsp;Parallel Date
             </Step.Title>
             <Step.Description>
               <Label color="teal">06/01/2023</Label>
@@ -83,7 +84,7 @@ export const TaskDates = () => {
         <Step>
           <Step.Content>
             <Step.Title>
-              <Icon name="print"></Icon>&nbsp;Live Date
+              <Icon name="industry"></Icon>&nbsp;Live Date
             </Step.Title>
             <Step.Description>
               <Label color="red">06/01/2023</Label>
@@ -130,6 +131,45 @@ const ProjectName = ({ prefix }) => {
   );
 };
 
+const TaskInfoAccessButtons = () => {
+  const [productionCheck, setProductionCheck] = useState(false);
+  const handleProductionCheck = () => {
+    setProductionCheck(!productionCheck);
+  };
+
+  useEffect(() => {}, [productionCheck]);
+  return (
+    <Button.Group size="mini" floated="right">
+      <Button size="mini" color="teal">
+        Change Assignee
+      </Button>
+      <Button.Or />
+      <Button size="mini" color="orange">
+        BugTracker
+      </Button>
+      <Button.Or />
+      <Button
+        size="mini"
+        color="blue"
+        onClick={handleProductionCheck}
+        disabled={productionCheck}
+      >
+        {productionCheck ? (
+          <>
+            <Icon name="check"></Icon>Checked in Production
+          </>
+        ) : (
+          <>Production Check</>
+        )}
+      </Button>
+      <Button.Or />
+      <Button size="mini" positive>
+        Done
+      </Button>
+    </Button.Group>
+  );
+};
+
 export default function TaskInfo() {
   return (
     <>
@@ -151,6 +191,23 @@ export default function TaskInfo() {
           </GridRow>
           <GridRow>
             <TaskDates></TaskDates>
+          </GridRow>
+          <GridRow columns="equal">
+            <GridColumn>
+              <span className="bug-tracker-info">
+                {" "}
+                <Icon name="chart pie"></Icon>Bug Tracker :
+              </span>{" "}
+              <Label color="red" size="tiny">
+                8 bugs <Icon name="bug"></Icon>
+              </Label>
+              <Label color="orange" size="tiny">
+                5 hold <Icon name="bug"></Icon>
+              </Label>
+            </GridColumn>
+            <GridColumn>
+              <TaskInfoAccessButtons></TaskInfoAccessButtons>
+            </GridColumn>
           </GridRow>
         </Grid>
       </TabPane>

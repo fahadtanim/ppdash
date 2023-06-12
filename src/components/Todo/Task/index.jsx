@@ -17,76 +17,10 @@ import {
 } from "semantic-ui-react";
 import TaskInfo from "./TaskInfo";
 import "./Task.css";
-
-// export const TaskDates = () => {
-//   return (
-//     <>
-//       <Grid className="task-date">
-//         <GridRow columns="equal">
-//           <GridColumn>
-//             <Label ribbon color="orange">
-//               CR &nbsp;
-//             </Label>
-//           </GridColumn>
-//           <GridColumn>
-//             <span>
-//               Turnover Date: &nbsp;&nbsp;
-//               <Label tag size="mini" color="green">
-//                 06/01/2023
-//               </Label>
-//             </span>
-//           </GridColumn>
-//           <GridColumn>
-//             <span>
-//               Sample Date: &nbsp;&nbsp;
-//               <Label tag size="mini" color="teal">
-//                 06/01/2023
-//               </Label>
-//             </span>
-//           </GridColumn>
-//           <GridColumn>
-//             <span>
-//               QA Date: &nbsp;&nbsp;
-//               <Label tag size="mini" color="blue">
-//                 06/01/2023
-//               </Label>
-//             </span>
-//           </GridColumn>
-//           <GridColumn>
-//             <span>
-//               Parallel Date: &nbsp;&nbsp;
-//               <Label tag size="mini" color="orange">
-//                 06/01/2023
-//               </Label>
-//             </span>
-//           </GridColumn>
-//           <GridColumn>
-//             <span>
-//               Live Date: &nbsp;&nbsp;
-//               <Label tag size="mini" color="red">
-//                 06/01/2023
-//               </Label>
-//             </span>
-//           </GridColumn>
-//         </GridRow>
-//       </Grid>
-//     </>
-//   );
-// };
+import TaskDescription from "./TaskDescription";
+import TaskComments from "./TaskComments";
 
 export default function Task() {
-  // const panes2 = [
-  //   {
-  //     menuItem: (
-  //       <Menu.Item as="a" key="task">
-  //         <Icon id="ticket-icon" name="ticket"></Icon>
-  //       </Menu.Item>
-  //     ),
-  //     render: () => <Tab.Pane>Tab 1 Content</Tab.Pane>,
-  //   },
-  //   { menuItem: "Tab 2", render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
-  //   { menuItem: "Tab 3", render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
-  // ];
   const panes = [
     {
       menuItem: (
@@ -107,7 +41,7 @@ export default function Task() {
           Description
         </Menu.Item>
       ),
-      render: () => <Tab.Pane>Description Content</Tab.Pane>,
+      render: () => <TaskDescription></TaskDescription>,
     },
     {
       menuItem: (
@@ -119,7 +53,7 @@ export default function Task() {
           Comments
         </Menu.Item>
       ),
-      render: () => <Tab.Pane>Comments Content</Tab.Pane>,
+      render: () => <TaskComments></TaskComments>,
     },
     {
       menuItem: (
@@ -128,7 +62,7 @@ export default function Task() {
           Checklist
         </Menu.Item>
       ),
-      render: () => <Tab.Pane>Comments Content</Tab.Pane>,
+      render: () => <Tab.Pane>Checklist Content</Tab.Pane>,
     },
   ];
   return (

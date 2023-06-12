@@ -32,7 +32,7 @@
     background-color: #001b2f;
 }
 
-#team-name-btn:hover > .icon {
+/* #team-name-btn:hover > .icon {
     color: #001b2f;
     border: 1px solid #001b2f;
     background-color: #fff;
@@ -42,4 +42,4 @@
 #team-name-btn > .icon {
     border: 1px solid #034577;
 
-}
+} */
