@@ -20,6 +20,9 @@ import TaskInfoAccessButtons from "./TaskInfoAccessButtons";
 import QAName from "./QAName";
 import TaskDates from "./TaskDates";
 import JiraTicket from "./JiraTicket";
+import EditTaskModal from "./EditTaskModal";
+import EditQAAssignee from "./EditQAAssignee";
+import EditTaskType from "./EditTaskType";
 
 export default function TaskInfo() {
   const dropdownRef = useRef(null);
@@ -72,31 +75,40 @@ export default function TaskInfo() {
                 text="Open Project..."
                 description="Gitlab Repo"
               />
-              <Dropdown.Item
-                icon="edit"
-                text="Edit..."
-                description="Task & Project Name"
-              />
+              <EditTaskModal
+                trigger={
+                  <Dropdown.Item
+                    icon="edit"
+                    text="Edit..."
+                    description="Task & Project Name"
+                  />
+                }
+              ></EditTaskModal>
+
               <Dropdown.Item
                 icon="microsoft edge"
                 text="Open Jira..."
                 description="https://infoimageinc.atla..."
               />
-              <Dropdown.Item
-                icon="bug"
-                text="Change QA"
-                description="QA Assignee"
-              />
-              <Dropdown.Item
-                icon="tasks"
-                text="Rename Task"
-                description="Renaming Task"
-              />
-              <Dropdown.Item
-                icon="sitemap"
-                text="Change Type"
-                description="QA Assignee"
-              />
+
+              <EditQAAssignee
+                trigger={
+                  <Dropdown.Item
+                    icon="bug"
+                    text="Change QA"
+                    description="QA Assignee"
+                  />
+                }
+              ></EditQAAssignee>
+              <EditTaskType
+                trigger={
+                  <Dropdown.Item
+                    icon="sitemap"
+                    text="Change Type"
+                    description="QA Assignee"
+                  />
+                }
+              ></EditTaskType>
 
               <Dropdown.Divider />
               <Dropdown.Item text="Bug Tracker" />

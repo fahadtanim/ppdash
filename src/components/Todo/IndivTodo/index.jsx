@@ -22,7 +22,7 @@ import {
 import Task from "../Task";
 export default function IndivTodo() {
   const { name } = useParams();
-
+  const tasks= [];
   return (
     <>
       <Container>

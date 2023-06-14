@@ -1,4 +1,3 @@
-
 import {
   Button,
   ButtonGroup,
@@ -14,8 +13,13 @@ import {
 } from "semantic-ui-react";
 import "./Login.css";
 
-
 function Login() {
+  const handleGitlabAuth = () => {
+    const url =
+      "https://gitlab.dsinnovators.com/oauth/authorize?client_id=12769cd034de60192b3a07f6f77cfd32cc84b3970c1edd57c47a88e5010fbaae&redirect_uri=http://localhost:5173/authorization/gitlab&response_type=code&state=STATE&scope=api+read_api+read_user+read_repository+write_repository+read_observability+write_observability+sudo+profile+openid+email+admin_mode";
+    window.open(url);
+  };
+
   return (
     <Grid centered id="login-container">
       <GridRow columns={3}>
@@ -51,7 +55,7 @@ function Login() {
                 <Icon name="google" /> Gmail
               </Button>
               <Button.Or text="Or" />
-              <Button color="vk">
+              <Button color="vk" onClick={handleGitlabAuth}>
                 <Icon name="gitlab" /> Gitlab
               </Button>
             </ButtonGroup>
