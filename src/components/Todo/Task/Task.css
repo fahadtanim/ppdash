@@ -1,8 +1,8 @@
 .ui[class*="right ribbon"].label {
     left: calc(100% - 1rem);}
-#ticket-icon{
+/* #ticket-icon{
     transform: rotateZ(-30deg);
-}
+} */
 
 .task-dates-steps{
     border-right: 0px !important;
@@ -25,4 +25,8 @@
 
 .comments-tab .ui.label{
     margin-left: 0.75rem !important;
+}
+
+.task-accordion-icon{
+    float: right !important;
 }
