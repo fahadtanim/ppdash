@@ -24,14 +24,18 @@ import Task from "../Task";
 import { useEffect, useState } from "react";
 export default function IndivTodo() {
   const { name } = useParams();
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const handleAccordionClick = (index) => {
-    const newIndex = activeIndex === index ? -1 : index;
-    setActiveIndex(newIndex);
-  };
+<<<<<<< HEAD
+const [activeIndex, setActiveIndex] = useState(-1);
+const handleAccordionClick = (index) => {
+  const newIndex = activeIndex === index ? -1 : index;
+  setActiveIndex(newIndex);
+};
 
-  useEffect(() => {}, [activeIndex]);
+useEffect(() => {}, [activeIndex]);
 
+=======
+  const tasks= [];
+>>>>>>> b6965ef37d289373740c60c7963c15938f63acc8
   return (
     <>
       <Container>

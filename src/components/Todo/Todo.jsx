@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   Container,
@@ -20,15 +20,20 @@ import {
 import AppSidebar from "./AppSidebar/AppSidebar";
 import { Outlet, useParams } from "react-router-dom";
 import "./Todo.css";
+import GitlabProjects from "../../api_services/gitlabProjects";
 
 export default function Todo() {
   const { name } = useParams();
   const [visible, setVisible] = useState(false);
-  const [teamNameButton, setTeamNameButton] = useState("angle right");
+  const [teamNameButton, setTeamNameButton] = useState("toggle off");
+  useEffect(() => {
+    const gitlabProjects = new GitlabProjects();
+    gitlabProjects.getPrefix();
+  }, [visible, teamNameButton]);
   const handleSideNav = () => {
     setVisible(visible ? false : true);
     setTeamNameButton(
-      teamNameButton === "angle right" ? "angle left" : "angle right"
+      teamNameButton === "toggle off" ? "toggle on" : "toggle off"
     );
   };
 
@@ -51,13 +56,12 @@ export default function Todo() {
                 >
                   <Button
                     color="blue"
-                    size="mini"
                     onClick={handleSideNav}
                     icon
                     labelPosition="right"
                     id="team-name-btn"
                   >
-                    Teams & Members <Icon name={teamNameButton} />
+                    Teams & Members <Icon size="large" name={teamNameButton} />
                   </Button>
                 </GridColumn>
                 <GridColumn></GridColumn>
