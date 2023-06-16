@@ -4,6 +4,7 @@ import {
   Button,
   Container,
   Divider,
+  Dropdown,
   Grid,
   GridColumn,
   GridRow,
@@ -25,11 +26,16 @@ import TaskDescription from "./TaskDescription";
 import TaskComments from "./TaskComments";
 import ProjectName from "./TaskInfo/ProjectName";
 import TaskType from "./TaskInfo/TaskType";
+import EditQAAssignee from "./TaskInfo/EditQAAssignee";
+import EditTaskModal from "./TaskInfo/EditTaskModal";
+import EditTaskType from "./TaskInfo/EditTaskType";
+import { useRef, useState } from "react";
 
 export default function Task({ activeIndex, index, onClick }) {
   const handleTaskClick = () => {
     onClick();
   };
+
   const panes = [
     {
       menuItem: (
@@ -80,28 +86,57 @@ export default function Task({ activeIndex, index, onClick }) {
         onClick={handleTaskClick}
       >
         <Grid>
-          <GridRow columns="equal">
-            <Label ribbon color="blue">
+          <GridRow columns={16} className="task-accourdion-title-wrapper">
+            <Label
+              ribbon
+              color="blue"
+              className="task-accordion-header-left-label"
+            >
               IS-2777
             </Label>
             <Icon
-              name={activeIndex === index ? "compress" : "expand"}
+              name={activeIndex === index ? "toggle on" : "toggle off"}
               className="task-accordion-icon"
             ></Icon>
-            <Label ribbon="right" color="red">
+            <Label
+              ribbon="right"
+              color="red"
+              className="task-accordion-header-right-label"
+            >
               due by 1 day
             </Label>
-            <GridColumn textAlign="center">Sana Overdraft Notice</GridColumn>
+            <GridColumn
+              textAlign={activeIndex === index ? "center" : "left"}
+              width={activeIndex === index ? 12 : 6}
+              className="task-accordion-header-title"
+            >
+              Sana Overdraft Notice
+            </GridColumn>
             {activeIndex !== index && (
               <>
-                <GridColumn>
-                  <ProjectName prefix="sanadla"></ProjectName>
-                </GridColumn>
-                <GridColumn>
-                  <TaskType type="CR"></TaskType>
+                <GridColumn width={6} className="task-accordion-label-wrapper">
+                  <Icon name="tags" size="small" color="grey"></Icon>
+                  <Label size="mini" color="blue">
+                    <Icon name="gitlab"></Icon>sanadla
+                  </Label>
+                  <Label size="mini" color="pink">
+                    <Icon name="bug"></Icon>Sumi
+                  </Label>
+                  <Label size="mini" color="orange">
+                    <Icon name="sitemap"></Icon>CR
+                  </Label>
                 </GridColumn>
               </>
             )}
+          </GridRow>
+          <GridRow columns="equal" className="task-accordion-progress-bar">
+            <GridColumn className="progress-preview"></GridColumn>
+            <GridColumn className="progress-preview active"></GridColumn>
+            <GridColumn className="progress-preview"></GridColumn>
+            <GridColumn className="progress-preview"></GridColumn>
+            <GridColumn className="progress-preview"></GridColumn>
+            <GridColumn className="progress-preview"></GridColumn>
+            <GridColumn className="progress-preview"></GridColumn>
           </GridRow>
         </Grid>
       </AccordionTitle>

@@ -1,0 +1,17 @@
+.ui.fluid.accordion, .ui.fluid.accordion .accordion.inverted{
+    background-color: #222;
+    
+}
+
+.ui.styled.accordion.inverted .title{
+    border-top: 1px solid rgb(48 49 49);
+}
+.ui.styled.accordion.inverted .title:first-child{
+    border-top: none;
+}
+
+
+.ui.inverted.task-item-accordion .step .content .title:not(.ui){
+    color: black;
+    
+}

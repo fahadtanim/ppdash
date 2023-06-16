@@ -27,8 +27,8 @@ export default function Todo() {
   const [visible, setVisible] = useState(false);
   const [teamNameButton, setTeamNameButton] = useState("toggle off");
   useEffect(() => {
-    const gitlabProjects = new GitlabProjects();
-    gitlabProjects.getPrefix();
+    // const gitlabProjects = new GitlabProjects();
+    // gitlabProjects.getPrefix();
   }, [visible, teamNameButton]);
   const handleSideNav = () => {
     setVisible(visible ? false : true);

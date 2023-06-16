@@ -1,3 +1,7 @@
+.task-wrapper{
+    cursor: pointer;
+}
+
 .ui[class*="right ribbon"].label {
     left: calc(100% - 1rem);}
 /* #ticket-icon{
@@ -28,5 +32,50 @@
 }
 
 .task-accordion-icon{
-    float: right !important;
+    align-self: center;
+}
+
+.task-accordion-header-right-label{
+    transform: translateX(-158%)!important;
+}
+.task-accordion-header-left-label{
+    transform: translateX(16%)!important;
+}
+
+.ui.grid>.row>[class*="left aligned"].column.column, .ui.grid>[class*="left aligned"].column.column, .ui.grid>[class*="left aligned"].row>.column, .ui[class*="left aligned"].grid>.column, .ui[class*="left aligned"].grid>.row>.column.task-accordion-header-title{
+    align-self: center ;
+}
+
+.ui.styled.accordion .accordion .content, .ui.styled.accordion .content {
+    margin: 0;
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+.ui>.row.task-accourdion-title-wrapper{
+    padding-bottom: 0px;
+}
+.task-accordion-progress-bar{
+    margin: 0px;
+    padding: 0px;
+}
+
+.progress-preview{
+    background-color: rgb(100, 100, 100);
+    height: 1px;
+    margin: 0px 4px;
+    border-radius: 5px;
+}
+
+.progress-preview.active{
+    /* background-color: rgb(73, 251, 53); */
+    /* background-color: rgb(	131, 238, 255); */
+    /* background-color: rgb(70,102,255); */
+    /* background-color: #0096FF; */
+    background-color: #f2711c;
+}
+
+.task-accordion-label-wrapper{
+    align-self: center;
+    text-align: right;
 }
