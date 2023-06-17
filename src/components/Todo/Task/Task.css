@@ -33,17 +33,26 @@
 
 .task-accordion-icon{
     align-self: center;
+    margin-left: 1rem !important;
 }
 
 .task-accordion-header-right-label{
-    transform: translateX(-158%)!important;
+    position: absolute!important;
+    left: 100%!important;
+    display: flex !important;
+    height: fit-content;
+    transform: translateX(-94%)!important;
+
 }
 .task-accordion-header-left-label{
-    transform: translateX(16%)!important;
+    transform: translateX(25%)!important;
+    display: flex !important;
+    height: fit-content;
 }
 
 .ui.grid>.row>[class*="left aligned"].column.column, .ui.grid>[class*="left aligned"].column.column, .ui.grid>[class*="left aligned"].row>.column, .ui[class*="left aligned"].grid>.column, .ui[class*="left aligned"].grid>.row>.column.task-accordion-header-title{
     align-self: center ;
+    font-size: 0.85rem;
 }
 
 .ui.styled.accordion .accordion .content, .ui.styled.accordion .content {
@@ -77,5 +86,11 @@
 
 .task-accordion-label-wrapper{
     align-self: center;
-    text-align: right;
+    text-align: left;
+}
+
+
+.test-wrapper{
+    display: flex;
+    flex-grow: 1;
 }

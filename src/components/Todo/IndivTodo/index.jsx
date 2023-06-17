@@ -85,6 +85,16 @@ export default function IndivTodo() {
               onClick={() => handleAccordionClick(2)}
               index={2}
             ></Task>
+            <Task
+              activeIndex={activeIndex}
+              onClick={() => handleAccordionClick(3)}
+              index={3}
+            ></Task>
+            <Task
+              activeIndex={activeIndex}
+              onClick={() => handleAccordionClick(4)}
+              index={4}
+            ></Task>
           </Accordion>
           <Dropdown
             className="jira-ticket-context-menu"

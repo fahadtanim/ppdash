@@ -85,7 +85,7 @@ export default function Task({ activeIndex, index, onClick }) {
         index={index}
         onClick={handleTaskClick}
       >
-        <Grid>
+        <Grid relaxed verticalAlign="middle">
           <GridRow columns={16} className="task-accourdion-title-wrapper">
             <Label
               ribbon
@@ -98,23 +98,16 @@ export default function Task({ activeIndex, index, onClick }) {
               name={activeIndex === index ? "toggle on" : "toggle off"}
               className="task-accordion-icon"
             ></Icon>
-            <Label
-              ribbon="right"
-              color="red"
-              className="task-accordion-header-right-label"
-            >
-              due by 1 day
-            </Label>
             <GridColumn
               textAlign={activeIndex === index ? "center" : "left"}
-              width={activeIndex === index ? 12 : 6}
+              width={activeIndex === index ? 12 : 8}
               className="task-accordion-header-title"
             >
               Sana Overdraft Notice
             </GridColumn>
             {activeIndex !== index && (
               <>
-                <GridColumn width={6} className="task-accordion-label-wrapper">
+                <GridColumn className="task-accordion-label-wrapper" width={6}>
                   <Icon name="tags" size="small" color="grey"></Icon>
                   <Label size="mini" color="blue">
                     <Icon name="gitlab"></Icon>sanadla
@@ -128,6 +121,13 @@ export default function Task({ activeIndex, index, onClick }) {
                 </GridColumn>
               </>
             )}
+            <Label
+              ribbon="right"
+              color="red"
+              className="task-accordion-header-right-label"
+            >
+              due by 1 day
+            </Label>
           </GridRow>
           <GridRow columns="equal" className="task-accordion-progress-bar">
             <GridColumn className="progress-preview"></GridColumn>
