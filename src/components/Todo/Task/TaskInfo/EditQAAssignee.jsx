@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Button, Form, Icon, Input, Label, Modal } from "semantic-ui-react";
+import { useState } from 'react';
+import { Button, Form, Icon, Input, Label, Modal } from 'semantic-ui-react';
 
 const EditQAAssignee = ({ trigger }) => {
   const [open, setOpen] = useState(false);
@@ -10,17 +10,20 @@ const EditQAAssignee = ({ trigger }) => {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       trigger={trigger}
+      basic
+      dimmer="blurring"
     >
       <Modal.Header>Change QA Assingee</Modal.Header>
-      <Modal.Content image scrolling>
+      <Modal.Content>
         <Modal.Description>
           <Form>
             <Form.Field>
               <Input
+              size='mini'
                 icon="bug"
                 label={<Label color="pink">QA Assignee</Label>}
                 list="qa"
-                placeholder="Choose Project..."
+                placeholder="Choose QA..."
               />
               <datalist id="qa">
                 <option value="English">English</option>

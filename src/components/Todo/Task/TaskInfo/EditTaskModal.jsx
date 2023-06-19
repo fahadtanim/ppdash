@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Button, Form, Icon, Input, Label, Modal } from "semantic-ui-react";
+import { useState } from 'react';
+import { Button, Form, Icon, Input, Label, Modal } from 'semantic-ui-react';
 
 const EditTaskModal = ({ trigger }) => {
   const [open, setOpen] = useState(false);
@@ -10,6 +10,8 @@ const EditTaskModal = ({ trigger }) => {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       trigger={trigger}
+      basic
+      dimmer="blurring"
     >
       <Modal.Header>Edit Task Name & Project Prefix</Modal.Header>
       <Modal.Content image scrolling>
@@ -17,6 +19,7 @@ const EditTaskModal = ({ trigger }) => {
           <Form>
             <Form.Field>
               <Input
+                size="mini"
                 icon="ticket"
                 label={<Label color="blue">Task Name</Label>}
                 placeholder="Sana DLA"
@@ -24,6 +27,7 @@ const EditTaskModal = ({ trigger }) => {
             </Form.Field>
             <Form.Field>
               <Input
+                size="mini"
                 icon="gitlab"
                 label={<Label color="blue">Project Prefix</Label>}
                 list="Prefix"

@@ -21,6 +21,7 @@ import AppSidebar from "./AppSidebar/AppSidebar";
 import { Outlet, useParams } from "react-router-dom";
 import "./Todo.css";
 import GitlabProjects from "../../api_services/gitlabProjects";
+import CreateTask from './Task/CreateTask';
 
 export default function Todo() {
   const { name } = useParams();
@@ -60,11 +61,11 @@ export default function Todo() {
                     icon
                     labelPosition="right"
                     id="team-name-btn"
+                    size='mini'
                   >
                     Teams & Members <Icon size="large" name={teamNameButton} />
                   </Button>
                 </GridColumn>
-                <GridColumn></GridColumn>
                 {name && (
                   <>
                     <GridColumn floated="left" width={8}>
@@ -92,9 +93,11 @@ export default function Todo() {
                         </ListItem>
                       </List>
                     </GridColumn>
-                    <GridColumn></GridColumn>
                   </>
                 )}
+                <GridColumn width={3}>
+                  <CreateTask trigger={<Button id="create-task-btn" color='blue' size='tiny' floated='right'>Create Task</Button>}></CreateTask>
+                </GridColumn>
               </GridRow>
               <GridRow>
                 <Outlet></Outlet>

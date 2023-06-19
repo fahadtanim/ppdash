@@ -31,6 +31,12 @@
 #team-name-btn:hover{
     background-color: #001b2f;
 }
+#create-task-btn{
+    background-color: #034577;
+}
+#create-task-btn:hover{
+    background-color: #001b2f;
+}
 
 /* #team-name-btn:hover > .icon {
     color: #001b2f;

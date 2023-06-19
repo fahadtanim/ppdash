@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Button,
   Dropdown,
@@ -7,22 +7,22 @@ import {
   Input,
   Label,
   Modal,
-} from "semantic-ui-react";
+} from 'semantic-ui-react';
 
 const EditTaskType = ({ trigger }) => {
   const [open, setOpen] = useState(false);
   const typeOptions = [
-    { key: "none", value: "none", text: "None" },
+    { key: 'none', value: 'none', text: 'None' },
     {
-      key: "im",
-      value: "im",
-      text: "IM",
+      key: 'im',
+      value: 'im',
+      text: 'IM',
       content: <Label color="violet">IM</Label>,
     },
     {
-      key: "cr",
-      value: "cr",
-      text: "CR",
+      key: 'cr',
+      value: 'cr',
+      text: 'CR',
       content: <Label color="orange">CR</Label>,
     },
   ];
@@ -32,25 +32,28 @@ const EditTaskType = ({ trigger }) => {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       trigger={trigger}
-      size="small"
+      basic
+      dimmer="blurring"
     >
-      <Modal.Header>Change QA Assingee</Modal.Header>
+      <Modal.Header>Change Task Type</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          <Label
-            size="large"
-            color="blue"
-            style={{ paddingTop: "0.85rem", paddingBottom: "0.8rem" }}
-          >
-            <Icon name="sitemap"></Icon>Project Type
-          </Label>
-          <Dropdown
-            placeholder="Select Type"
-            search
-            selection
-            options={typeOptions}
-            style={{ cursor: "pointer" }}
-          />
+          <Form>
+            <Form.Field>
+              <Input
+                size="mini"
+                icon="sitemap"
+                label={<Label color="teal">Project Type</Label>}
+                list="project-type"
+                placeholder="Choose Type..."
+              />
+              <datalist id="project-type">
+                <option value="None">None</option>
+                <option value="CR">CR</option>
+                <option value="IM">IM</option>
+              </datalist>
+            </Form.Field>
+          </Form>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
