@@ -19,17 +19,17 @@ import {
   Segment,
   Step,
   Tab,
-} from "semantic-ui-react";
-import TaskInfo from "./TaskInfo";
-import "./Task.css";
-import TaskDescription from "./TaskDescription";
-import TaskComments from "./TaskComments";
-import ProjectName from "./TaskInfo/ProjectName";
-import TaskType from "./TaskInfo/TaskType";
-import EditQAAssignee from "./TaskInfo/EditQAAssignee";
-import EditTaskModal from "./TaskInfo/EditTaskModal";
-import EditTaskType from "./TaskInfo/EditTaskType";
-import { useRef, useState } from "react";
+} from 'semantic-ui-react';
+import TaskInfo from './TaskInfo';
+import './Task.css';
+import TaskDescription from './TaskDescription';
+import TaskComments from './TaskComments';
+import ProjectName from './TaskInfo/ProjectName';
+import TaskType from './TaskInfo/TaskType';
+import EditQAAssignee from './TaskInfo/EditQAAssignee';
+import EditTaskModal from './TaskInfo/EditTaskModal';
+import EditTaskType from './TaskInfo/EditTaskType';
+import { useRef, useState } from 'react';
 
 export default function Task({ activeIndex, index, onClick }) {
   const handleTaskClick = () => {
@@ -95,12 +95,13 @@ export default function Task({ activeIndex, index, onClick }) {
               IS-2777
             </Label>
             <Icon
-              name={activeIndex === index ? "toggle on" : "toggle off"}
+              name={activeIndex === index ? 'toggle on' : 'toggle off'}
               className="task-accordion-icon"
             ></Icon>
             <GridColumn
-              textAlign={activeIndex === index ? "center" : "left"}
-              width={activeIndex === index ? 12 : 8}
+              // textAlign={activeIndex === index ? 'center' : 'left'}
+              textAlign="left"
+              width={activeIndex === index ? 12 : 7}
               className="task-accordion-header-title"
             >
               Sana Overdraft Notice
